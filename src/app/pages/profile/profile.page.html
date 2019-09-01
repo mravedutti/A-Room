@@ -1,0 +1,44 @@
+<ion-content>
+
+  <ion-list inset>
+    <ion-item routerLink="/editroom">
+      Seja um locatário
+    </ion-item>
+    <ion-item routerLink="/editroom">
+      Minhas Reservas
+    </ion-item>
+    <ion-item routerLink="/editroom">
+      Ajuda
+    </ion-item>
+    <ion-item routerLink="/editroom">
+      Configurações
+    </ion-item>
+    <ion-item routerLink="/editroom">
+      Feedback
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar slot="bottom">
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button routerLink="/home" routerDirection="back">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button routerLink="/favorites" routerDirection="back">
+          <ion-icon name="heart"></ion-icon>
+          <ion-label>Favoritos</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button>
+          <ion-icon name="person" color="primary"></ion-icon>
+          <ion-label>Perfil</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

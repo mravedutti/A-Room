@@ -1,0 +1,44 @@
+<ion-content class="swiper-no-swiping"> 
+
+  <div class="container top">
+      <ion-segment>
+        <ion-segment-button value="login">
+          <ion-label>Login</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+  </div>    
+
+  <div class="slide-inner ion-padding">
+    <ion-item class="ion-margin-top" lines="none">
+      <ion-input type="email" placeholder="E-mail" [(ngModel)]="userLogin.email"></ion-input>
+    </ion-item>
+  <!--
+    <ion-item class="ion-margin-top" lines="none">
+      <ion-input type="password" placeholder="Senha"  [(ngModel)]="userLogin.password"></ion-input>
+    </ion-item>
+  -->  
+    <ion-item class="ion-margin-top" lines = "none">
+        <ion-input type="text" *ngIf="showPasswordText" placeholder="Senha" [(ngModel)]="userLogin.password"></ion-input>
+        <ion-input type="password" *ngIf="!showPasswordText" placeholder="Senha" [(ngModel)]="userLogin.password"></ion-input>
+        <button ion-button clear color="white" type="button" item-right (click)="showPasswordText = !showPasswordText">
+            <ion-icon *ngIf="showPasswordText" name="eye"></ion-icon>
+            <ion-icon *ngIf="!showPasswordText" name="eye-off"></ion-icon>
+        </button>
+    </ion-item>    
+
+    <ion-button class="ion-margin-top" (click)="login()" color="light" expand="block">
+        Entrar
+    </ion-button>
+
+    <ion-button class="ion-margin-top" (click)="Anonym()" color="light" expand="block">
+      Entrar Anônimo
+    </ion-button>
+
+    <ion-button class="ion-margin-top" (click)="Register()" color="light" expand="block">
+      Registrar
+    </ion-button>
+
+  </div>
+
+</ion-content>
+    

@@ -1,0 +1,6 @@
+https://forum.ionicframework.com/t/how-to-add-eye-icon-inside-input-field/72199/8
+ <ion-input type="text" *ngIf="showPasswordText"></ion-input>
+          <ion-input type="password" *ngIf="!showPasswordText" ></ion-input>
+          <button ion-button clear color="dark" type="button" item-right (click)="showPasswordText = !showPasswordText">
+            <ion-icon name="eye"> </ion-icon>
+          </button>

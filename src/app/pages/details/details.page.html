@@ -1,0 +1,72 @@
+<ion-content *ngIf=room.title>
+
+  <div class="item profilepic-border" align="center">
+    <ion-button routerLink="/home" routerDirection="root" class="returnbutton" fill="clear" size="large" color="light">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-button class="favoritebutton" fill="clear" size="large" color="light" slot="end">
+      <ion-icon name="heart-outline"></ion-icon>
+    </ion-button>
+    <img *ngIf="!room.photoURL" class="profilepic padding-bottom"
+      src="https://www.livingspaces.com/globalassets/images/lp/2018/03/03_06_living_room_3d.jpg">
+    <img *ngIf="room.photoURL" class="profilepic padding-bottom" src="room.photoURL">
+  </div>
+
+  <div>
+    <ion-item lines="none">
+      <ion-label>
+        <b>
+          {{ room.title }}
+        </b>
+      </ion-label>
+    </ion-item>
+  </div>
+
+  <div class="ion-text-wrap">
+    <ion-item lines="none">
+      <p>
+        {{ room.description }}
+      </p>
+    </ion-item>
+  </div>
+
+  <div *ngIf="room.address">
+    <ion-item>
+      {{ room.address }}
+    </ion-item>
+  </div>
+
+  <div>
+    <ion-item>
+      Preço: {{room.price | currency:'BRL':'symbol':'1.2-2'}} / Hora
+    </ion-item>
+  </div>
+
+  <ion-item>
+    <ion-label>Data</ion-label>
+    <ion-datetime display-format="DD/MM/YYYY" value="1990-02-19" placeholder="Select Date"></ion-datetime>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label >Horário</ion-label>
+    <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T07:43Z"></ion-datetime>
+    <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T07:43Z"></ion-datetime>
+  </ion-item>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-item lines="none" slot="start">
+      Total
+    </ion-item>
+    <ion-item lines="none" slot="end">
+      {{room.price | currency:'BRL':'symbol':'1.2-2'}}
+    </ion-item>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-button (click)="Rent()" expand="full">
+      Reservar
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

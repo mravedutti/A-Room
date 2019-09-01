@@ -1,0 +1,36 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="room.title" placeholder="Titulo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="room.description" placeholder="Descrição"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="room.picture" placeholder="Foto"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="room.price" placeholder="Preço"></ion-input>
+    </ion-item>
+  </ion-list>
+  <!--
+  <ion-button (click)="openImagePicker()">
+    Upload Picture
+  </ion-button>
+  -->
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="saveRoom()" expand="block">
+      Salvar produto
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
