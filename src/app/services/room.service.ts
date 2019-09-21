@@ -43,4 +43,8 @@ export class RoomService {
     return this.RoomsCollection.doc(id).delete();
   }
 
+  addReservation(id: string, reservation: string){
+    
+  }
+
 }

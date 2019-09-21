@@ -1,17 +1,32 @@
+ion-content{
+  --background: #f1f1f1;
+  --background-rgb: 241,241,241;
+}
+ion-datetime{
+  padding: 0;
+}
+
+.no-Margin {
+  margin: none;
+}
+
 .returnbutton {
-    z-index: 2;
-    position: absolute;
-  }
-.favoritebutton{
   z-index: 2;
   position: absolute;
-  left: 80%
+  left: 0%;
 }
-  .profilepic {
+.favoritebutton {
+  z-index: 2;
+  position: absolute;
+  left: 80%;
+}
+.profilepic {
   width: 100%;
   height: 100%;
-  }
-  .profilepic-border {
+}
+.profilepic-border {
   position: relative;
   background: #a3a3a3;
-  }
+}
+
+

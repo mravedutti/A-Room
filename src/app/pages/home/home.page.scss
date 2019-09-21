@@ -1,0 +1,35 @@
+ion-content {
+  --background: #f9f9f9;
+  --background-rgb: 249,249,249;;
+}
+
+ion-item {
+  --background: #f9f9f9;
+  --background-rgb: 249,249,249;;
+}
+
+ion-card {
+  --background: #ffffff;
+  --background-rgb: 245, 245, 245;
+}
+
+ion-searchbar {
+  --background: #ffffff;
+  --background-rgb: 245, 245, 245;
+}
+
+ion-card{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  max-height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.default-img{
+  display: flex;
+  flex-direction: column;
+  max-width: 100px;
+  margin: auto;
+}

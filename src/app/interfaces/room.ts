@@ -7,4 +7,5 @@ export interface Room {
     price?: number;
     createdAt?: number;
     userId?: string;
+    reservations?: Array<string>;
 }

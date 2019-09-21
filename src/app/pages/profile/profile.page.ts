@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,15 +9,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-  private router: Router
 
-  constructor(  ) { }
+  constructor(
+    private authService: UserService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
 
-  async AddProduct(){
-    this.router.navigateByUrl("/editroom");
+  async logOut() {
+    await this.authService.logout();
+    this.router.navigateByUrl("");
   }
-  
+
 }

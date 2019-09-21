@@ -1,44 +1,46 @@
-<ion-content class="swiper-no-swiping"> 
+<ion-content padding center>
 
-  <div class="container top">
-      <ion-segment>
-        <ion-segment-button value="login">
-          <ion-label>Login</ion-label>
-        </ion-segment-button>
-      </ion-segment>
-  </div>    
+  <div>
+    <div>
+      <img src="../../../assets/A-Room-icon.png" class="logo-img">
+    </div>
 
-  <div class="slide-inner ion-padding">
-    <ion-item class="ion-margin-top" lines="none">
-      <ion-input type="email" placeholder="E-mail" [(ngModel)]="userLogin.email"></ion-input>
-    </ion-item>
-  <!--
-    <ion-item class="ion-margin-top" lines="none">
-      <ion-input type="password" placeholder="Senha"  [(ngModel)]="userLogin.password"></ion-input>
-    </ion-item>
-  -->  
-    <ion-item class="ion-margin-top" lines = "none">
-        <ion-input type="text" *ngIf="showPasswordText" placeholder="Senha" [(ngModel)]="userLogin.password"></ion-input>
-        <ion-input type="password" *ngIf="!showPasswordText" placeholder="Senha" [(ngModel)]="userLogin.password"></ion-input>
-        <button ion-button clear color="white" type="button" item-right (click)="showPasswordText = !showPasswordText">
-            <ion-icon *ngIf="showPasswordText" name="eye"></ion-icon>
-            <ion-icon *ngIf="!showPasswordText" name="eye-off"></ion-icon>
+    <div class="slide-inner ion-padding inner-background">
+
+      <ion-item class="ion-margin-top" lines="none">
+        <ion-icon name="mail"></ion-icon>
+        <ion-input type="email" placeholder="E-mail" [(ngModel)]="userLogin.email"></ion-input>
+      </ion-item>
+
+      <ion-item class="ion-margin-top" lines="none">
+        <ion-icon name="lock"></ion-icon>
+        <ion-input type="text" *ngIf="showPasswordText" placeholder="Senha" [(ngModel)]="userLogin.password">
+        </ion-input>
+        <ion-input type="password" *ngIf="!showPasswordText" placeholder="Senha" [(ngModel)]="userLogin.password">
+        </ion-input>
+        <button ion-button class="button" type="button" item-right (click)="showPasswordText = !showPasswordText">
+          <ion-icon *ngIf="showPasswordText" name="eye"></ion-icon>
+          <ion-icon *ngIf="!showPasswordText" name="eye-off"></ion-icon>
         </button>
-    </ion-item>    
+      </ion-item>
+      <p>Esqueci minha senha</p>
 
-    <ion-button class="ion-margin-top" (click)="login()" color="light" expand="block">
+      <ion-button class="ion-margin-top button-bg" (click)="login()" expand="block">
         Entrar
-    </ion-button>
+      </ion-button>
 
-    <ion-button class="ion-margin-top" (click)="Anonym()" color="light" expand="block">
-      Entrar Anônimo
-    </ion-button>
+      <ion-button class="ion-margin-top button-bg" (click)="Anonym()" expand="block">
+        Entrar Anônimo
+      </ion-button>
 
-    <ion-button class="ion-margin-top" (click)="Register()" color="light" expand="block">
-      Registrar
-    </ion-button>
 
+      <ion-button class="ion-margin-top button-bg" (click)="Register()" expand="block">
+        Registrar
+      </ion-button>
+
+    </div>
   </div>
 
+
+
 </ion-content>
-    

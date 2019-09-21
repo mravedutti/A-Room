@@ -1,0 +1,55 @@
+/* screen bg */
+ion-content{
+    --background: linear-gradient(180deg, #E88818 34.9%, #F2C94C 71.87%);
+}
+
+.button {
+  background-color: #ffffff; 
+  border: none;
+  padding: none;
+  text-align: center;
+  text-decoration: none;
+}
+
+.logo-img{
+    max-width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Fundo */
+.inner-background {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 160px;
+    background: #F1F1F1;
+    border-radius: 12px;
+}
+
+/* button bg */
+.button-bg{
+    background: #E88818;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+/* Input text */
+.input-text{
+    position: absolute;
+    width: 52px;
+    height: 24px;
+    left: 77px;
+    top: 288px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    
+    color: rgba(0, 0, 0, 0.46);
+}

@@ -1,3 +1,60 @@
+<ion-content *ngIf=!room.title>
+  <div class="item profilepic-border" align="center">
+    <ion-button routerLink="/home" routerDirection="root" class="returnbutton" fill="clear" size="large" color="light">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-button class="favoritebutton" fill="clear" size="large" color="light" slot="end">
+      <ion-icon name="heart-outline"></ion-icon>
+    </ion-button>
+    <ion-skeleton-text animated style="height: 200px" class="ion-no-margin"></ion-skeleton-text>
+  </div>
+
+  <div>
+    <ion-item lines="none">
+      <ion-label>
+        <b>
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </b>
+      </ion-label>
+    </ion-item>
+  </div>
+
+  <div>
+    <ion-item lines="none">
+      <ion-skeleton-text animated></ion-skeleton-text>
+    </ion-item>
+  </div>
+
+  <div>
+    <ion-item>
+      <ion-skeleton-text animated></ion-skeleton-text>
+    </ion-item>
+  </div>
+
+  <div>
+    <ion-item>
+      <p>Preço:</p>
+      <ion-skeleton-text animated style="width: 30%" slot="end"></ion-skeleton-text>
+    </ion-item>
+  </div>
+
+  <ion-item>
+    <ion-label>Data</ion-label>
+    <ion-datetime display-format="MM/DD/YYYY" max="2012-12-09"></ion-datetime>
+    <ion-datetime display-format="DD/MM/YYYY" picker-format="DD/MM/YYYY" placeholder="Selecione a Data"
+      [min]="CurrDateISO" max="2030-12-31" [(ngModel)]="date"></ion-datetime>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label>Horário</ion-label>
+    <ion-datetime display-format="HH:mm" picker-format="HH:mm" [(ngModel)]="startTime" placeholder="Inicio"
+      minuteValues="0">
+    </ion-datetime>
+    <p class="ion-padding ion-no-margin">até</p>
+    <ion-datetime display-format="HH:mm" picker-format="HH:mm" [(ngModel)]="endTime" placeholder="Fim" minuteValues="0">
+    </ion-datetime>
+  </ion-item>
+</ion-content>
+
 <ion-content *ngIf=room.title>
 
   <div class="item profilepic-border" align="center">
@@ -7,9 +64,8 @@
     <ion-button class="favoritebutton" fill="clear" size="large" color="light" slot="end">
       <ion-icon name="heart-outline"></ion-icon>
     </ion-button>
-    <img *ngIf="!room.photoURL" class="profilepic padding-bottom"
-      src="https://www.livingspaces.com/globalassets/images/lp/2018/03/03_06_living_room_3d.jpg">
-    <img *ngIf="room.photoURL" class="profilepic padding-bottom" src="room.photoURL">
+    <img *ngIf="!room.photoURL" class="profilepic" src="../../../assets/no-image-icon.png">
+    <img *ngIf="room.photoURL" class="profilepic" [src]="room.photoURL">
   </div>
 
   <div>
@@ -44,18 +100,25 @@
 
   <ion-item>
     <ion-label>Data</ion-label>
-    <ion-datetime display-format="DD/MM/YYYY" value="1990-02-19" placeholder="Select Date"></ion-datetime>
+    <ion-datetime display-format="MM/DD/YYYY" max="2012-12-09"></ion-datetime>
+    <ion-datetime display-format="DD/MM/YYYY" picker-format="DD/MM/YYYY" placeholder="Selecione a Data"
+      [min]="CurrDateISO" max="2030-12-31" [(ngModel)]="date"></ion-datetime>
   </ion-item>
-  <ion-item lines="none">
-    <ion-label >Horário</ion-label>
-    <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T07:43Z"></ion-datetime>
-    <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T07:43Z"></ion-datetime>
+  <ion-item lines="full">
+    <ion-label>Horário</ion-label>
+    <ion-datetime display-format="HH:mm" picker-format="HH:mm" [(ngModel)]="startTime" placeholder="Inicio"
+      minuteValues="0">
+    </ion-datetime>
+    <p class="ion-padding ion-no-margin">até</p>
+    <ion-datetime display-format="HH:mm" picker-format="HH:mm" [(ngModel)]="endTime" placeholder="Fim" minuteValues="0">
+    </ion-datetime>
   </ion-item>
+
 
 </ion-content>
 
 
-<ion-footer>
+<ion-footer *ngIf=room.title>
   <ion-toolbar>
     <ion-item lines="none" slot="start">
       Total
@@ -64,8 +127,8 @@
       {{room.price | currency:'BRL':'symbol':'1.2-2'}}
     </ion-item>
   </ion-toolbar>
-  <ion-toolbar>
-    <ion-button (click)="Rent()" expand="full">
+  <ion-toolbar *ngIf="guestID">
+    <ion-button (click)="submitReservation()" expand="full">
       Reservar
     </ion-button>
   </ion-toolbar>

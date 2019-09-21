@@ -1,21 +1,49 @@
 <ion-content>
 
   <ion-list inset>
+
     <ion-item routerLink="/editroom">
-      Seja um locatário
+      <ion-label>
+        Seja um locatário
+      </ion-label>
+      <ion-icon slot="end" name="add"></ion-icon>
     </ion-item>
-    <ion-item routerLink="/editroom">
-      Minhas Reservas
+
+    <ion-item>
+      <ion-label>
+        Minhas Reservas
+      </ion-label>
+      <ion-icon slot="end" name="settings"></ion-icon>
     </ion-item>
-    <ion-item routerLink="/editroom">
-      Ajuda
+
+    <ion-item>
+      <ion-label>
+        Ajuda
+      </ion-label>
+      <ion-icon slot="end" name="help"></ion-icon>
+
     </ion-item>
-    <ion-item routerLink="/editroom">
-      Configurações
+    <ion-item>
+      <ion-label>
+        Configurações
+      </ion-label>
+      <ion-icon slot="end" name="settings"></ion-icon>
     </ion-item>
-    <ion-item routerLink="/editroom">
-      Feedback
+
+    <ion-item>
+      <ion-label>
+        Feedback
+      </ion-label>
+      <ion-icon slot="end" name="settings"></ion-icon>
     </ion-item>
+
+    <ion-item (click)="logOut()">
+      <ion-label>
+        Sair
+      </ion-label>
+      <ion-icon slot="end" name="exit"></ion-icon>
+    </ion-item>
+
   </ion-list>
 
 </ion-content>

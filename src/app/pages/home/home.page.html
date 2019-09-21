@@ -1,11 +1,12 @@
 <ion-content>
+
   <ion-searchbar animated>
   </ion-searchbar>
-
+  
   <div>
-    <ion-list-header>
+    <ion-item line="full">
       Salas Disponíveis
-    </ion-list-header>
+    </ion-item>
     <ion-list *ngIf="!rooms.length">
       <ion-item *ngFor="let item of [0, 1]">
         <ion-card>
@@ -18,25 +19,20 @@
 
     <ion-list>
       <ion-item-sliding *ngFor="let room of rooms">
-        <ion-item>
+        <ion-item lines="none">
           <ion-card button [routerLink]="['/details', room.id]">
-            <!--
-            <ion-slides [options]="sliderOpts">
-              <ion-slide *ngFor="let img of imagens">
-                <img [src]="img">
-              </ion-slide>
-            </ion-slides>
-            -->
-            <ion-img [src]="imagens[0]"></ion-img>
+            <ion-img class="default-img" *ngIf="!room.photoURL" src="../../../assets/no-image-icon.png"></ion-img>
+            <ion-img *ngIf="room.photoURL" [src]="room.photoURL"></ion-img>
             <ion-card-content>
               <ion-card-title>
                 {{ room.title }}
               </ion-card-title>
               <p>{{ room.description }}</p>
-              <ion-note color="primary" slot="end" *ngIf="room.price">{{ room.price | currency:'BRL':'symbol':'1.2-2'}}</ion-note>
-              </ion-card-content>
+              <ion-note color="primary" slot="end" *ngIf="room.price">{{ room.price | currency:'BRL':'symbol':'1.2-2'}}
+              </ion-note>
+            </ion-card-content>
 
-            </ion-card>
+          </ion-card>
         </ion-item>
 
         <!--
@@ -52,24 +48,24 @@
   </div>
 </ion-content>
 <ion-footer>
-    <ion-toolbar slot="bottom">
-        <ion-tabs>
-          <ion-tab-bar slot="bottom">
-            <ion-tab-button>
-              <ion-icon name="home" color="primary"></ion-icon>
-              <ion-label>Home</ion-label>
-            </ion-tab-button>
-      
-            <ion-tab-button routerLink="/favorites" routerDirection="forward">
-              <ion-icon name="heart" isActive="false"></ion-icon>
-              <ion-label>Favoritos</ion-label>
-            </ion-tab-button>
-      
-            <ion-tab-button routerLink="/profile" routerDirection="forward">
-              <ion-icon name="person" isActive="false"></ion-icon>
-              <ion-label>Perfil</ion-label>
-            </ion-tab-button>
-          </ion-tab-bar>
-        </ion-tabs>
-      </ion-toolbar>
+  <ion-toolbar slot="bottom">
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button>
+          <ion-icon name="home" color="primary"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button routerLink="/favorites" routerDirection="forward">
+          <ion-icon name="heart" isActive="false"></ion-icon>
+          <ion-label>Favoritos</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button routerLink="/profile" routerDirection="forward">
+          <ion-icon name="person" isActive="false"></ion-icon>
+          <ion-label>Perfil</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
 </ion-footer>

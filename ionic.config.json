@@ -1,5 +1,7 @@
 {
   "name": "ARoom",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
